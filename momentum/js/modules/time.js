@@ -1,4 +1,4 @@
-import showGreeting from './2_greeting.js'; 
+import showGreeting from './greeting.js'; 
 
 export default function showTime() {
     const time = document.querySelector('.time');
@@ -12,8 +12,9 @@ export default function showTime() {
 
 function showDate() {
     const date = document.querySelector('.date');
-    const options = { month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'UTC' };
-    const currentDate = new Date().toLocaleDateString('ru-Ru', options);;
+    // const options = { month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'UTC' };
+    // const currentDate = new Date().toLocaleDateString('ru-Ru', options);
+    const currentDate = new Date().toLocaleDateString('ru-Ru');
 
     date.textContent = currentDate;
 }
