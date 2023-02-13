@@ -1,14 +1,18 @@
+import { getBackgroundImage, getSlideNext, getSlidePrev } from "./modules/slider.js";
+import { getWeather } from "./modules/weather.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
-import { getWeather } from "./modules/weather.js";
 
 window.addEventListener('load', getUserName);
 window.addEventListener('beforeunload', setUserName);
 document.querySelector('.change-quote').addEventListener('click', getQuote);
+document.querySelector('.slide-next').addEventListener('click', getSlideNext);
+document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
 
 showTime();
 showWeather('Minsk');
 getQuote();
+getBackgroundImage()
 
 
 function showWeather(location) {

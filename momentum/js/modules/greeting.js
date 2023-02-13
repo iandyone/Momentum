@@ -8,6 +8,6 @@ export default function showGreeting() {
 }
 
 export function getTimeOfDay(hours) {
-    const timesOfDay = ["morning", "afternoon", "evening", "night"];
-    return timesOfDay[Math.floor(hours / 6) - 1];
+    const timesOfDay = ["night", "morning", "afternoon", "evening"];
+    return timesOfDay[Math.floor(hours / 6)];
 }
