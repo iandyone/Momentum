@@ -1,9 +1,12 @@
+import showGreeting from './2_greeting.js'; 
+
 export default function showTime() {
     const time = document.querySelector('.time');
     const currentTime = new Date().toLocaleTimeString();
     time.textContent = currentTime;
 
     showDate();
+    showGreeting();
     setTimeout(showTime, 1000);
 }
 
