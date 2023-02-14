@@ -27,6 +27,19 @@ export async function getWeather(location) {
     }
 }
 
+export function showWeather(location) {
+    const city = document.querySelector('.city');
+    const currentCity = getWeatherCity(location);
+
+    city.value = currentCity;
+    city.onchange = () => {
+        getWeather(city.value);
+        localStorage.setItem('city', city.value);
+    };
+
+    getWeather(city.value);
+}
+
 function displayWidget(status) {
     if (status === 200) {
         weatherIcon.classList.remove('hidden');
@@ -52,4 +65,13 @@ function setWidgetData(data) {
     weatherDescription.textContent = data.weather[0].description;
     weatherWind.textContent = `Ветер: ${Math.round(data.wind.speed)} м/с`;
     weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;
+}
+
+function getWeatherCity(location) {
+    if (localStorage.getItem('city')) {
+        return localStorage.getItem('city');
+    }
+
+    localStorage.setItem('city', location);
+    return location;
 }
