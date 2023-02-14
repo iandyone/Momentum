@@ -1,4 +1,5 @@
 import { getBackgroundImage, getSlideNext, getSlidePrev } from "./modules/slider.js";
+import { getUserName, setUserName } from "./modules/greeting.js";
 import { getWeather } from "./modules/weather.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
@@ -12,7 +13,7 @@ document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
 showTime();
 showWeather('Minsk');
 getQuote();
-getBackgroundImage()
+getBackgroundImage();
 
 
 function showWeather(location) {
@@ -28,18 +29,6 @@ function showWeather(location) {
     getWeather(city.value);
 }
 
-function getUserName(userName) {
-    const user = document.querySelector('.name');
-
-    if (localStorage.getItem('name')) {
-        user.value = localStorage.getItem('name');
-    }
-}
-
-function setUserName() {
-    const userName = document.querySelector('.name').value;
-    localStorage.setItem('name', userName);
-}
 
 function getWeatherCity(location) {
     if (localStorage.getItem('city')) {
