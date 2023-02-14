@@ -1,6 +1,6 @@
 import { getRandomValue } from "../index.js";
 
-const API_URL = '../quotes.json';
+const API_URL = './quotes.json';
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 

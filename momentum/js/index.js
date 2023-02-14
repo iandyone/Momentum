@@ -1,12 +1,16 @@
 import { getBackgroundImage, getSlideNext, getSlidePrev } from "./modules/slider.js";
 import { getUserName, setUserName } from "./modules/greeting.js";
 import { getWeather } from "./modules/weather.js";
+import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
 
 window.addEventListener('load', getUserName);
 window.addEventListener('beforeunload', setUserName);
 document.querySelector('.change-quote').addEventListener('click', getQuote);
+document.querySelector('.play').addEventListener('click', playMusic);
+document.querySelector('.play-next').addEventListener('click', playNextTrack);
+document.querySelector('.play-prev').addEventListener('click', playPrevTrack);
 document.querySelector('.slide-next').addEventListener('click', getSlideNext);
 document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
 
@@ -14,6 +18,7 @@ showTime();
 showWeather('Minsk');
 getQuote();
 getBackgroundImage();
+renderPlayList();
 
 
 function showWeather(location) {
@@ -28,7 +33,6 @@ function showWeather(location) {
 
     getWeather(city.value);
 }
-
 
 function getWeatherCity(location) {
     if (localStorage.getItem('city')) {

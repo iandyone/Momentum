@@ -289,3 +289,14 @@ body {
 .hidden {
     display: none;
 }
+
+.play-item {
+    transition: all .2s ease;
+    font-weight: 600;
+}
+
+.play-item.active {
+    color: #3ee433;
+    font-weight: 600;
+    transition: all .3s ease;
+}
