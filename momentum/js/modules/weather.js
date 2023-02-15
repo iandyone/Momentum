@@ -1,3 +1,4 @@
+import { appLanguage } from "../index.js";
 const API_KEY = `901e2cb82742e82d213c46a83ddf4d8a`;
 const weatherIcon = document.querySelector('.weather-icon');
 const weatherError = document.querySelector('.weather-error');
@@ -6,26 +7,6 @@ const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 const weatherWind = document.querySelector('.weather-wind');
 const weatherHumidity = document.querySelector('.weather-humidity');
-
-export async function getWeather(location) {
-    try {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&lang=ru&appid=${API_KEY}&units=metric`);
-        displayWidget(res.status);
-
-        if (res.status === 200) {
-            const data = await res.json();
-            setWidgetData(data);
-        } else if (res.status === 404) {
-            throw new Error(`Город не найден`)
-        } else if (!location) {
-            throw new Error(`Укажите название города`)
-        } else {
-            throw new Error(`Непредвиденная ошибка`)
-        }
-    } catch (error) {
-        weatherError.textContent = error.message;
-    }
-}
 
 export function showWeather(location) {
     const city = document.querySelector('.city');
@@ -36,8 +17,27 @@ export function showWeather(location) {
         getWeather(city.value);
         localStorage.setItem('city', city.value);
     };
-
     getWeather(city.value);
+}
+
+async function getWeather(location) {
+    try {
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&lang=${appLanguage}&appid=${API_KEY}&units=metric`);
+        displayWidget(res.status);
+
+        if (res.status === 200) {
+            const data = await res.json();
+            setWidgetData(data);
+        } else if (res.status === 404) {
+            throw new Error(`Город не найден`);
+        } else if (!location) {
+            throw new Error(`Укажите название города`);
+        } else {
+            throw new Error(`Непредвиденная ошибка`);
+        }
+    } catch (error) {
+        weatherError.textContent = error.message;
+    }
 }
 
 function displayWidget(status) {
@@ -63,8 +63,14 @@ function setWidgetData(data) {
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;
     weatherDescription.textContent = data.weather[0].description;
-    weatherWind.textContent = `Ветер: ${Math.round(data.wind.speed)} м/с`;
-    weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;
+
+    if (appLanguage === "ru") {
+        weatherWind.textContent = `Ветер: ${Math.round(data.wind.speed)} м/с`;
+        weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;   
+    } else if (appLanguage === "en") {
+        weatherWind.textContent = `Wind: ${Math.round(data.wind.speed)} м/с`;
+        weatherHumidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
+    }
 }
 
 function getWeatherCity(location) {

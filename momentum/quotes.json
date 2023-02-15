@@ -1,78 +1,158 @@
-[
-    {
-        "text": "Пишите код так, как будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете",
-        "author": "Стив Макконнелл"
-    },
-    {
-        "text": "Сложность программы растет до тех пор, пока не превысит способности программиста",
-        "author": "Артур Блох. Законы Мэрфи"
-    },
-    {
-        "text": "Ходить по воде и разрабатывать программы, следуя ТЗ, очень просто… если они заморожены",
-        "author": "И. Берард"
-    },
-    {
-        "text": "Не волнуйтесь, если что-то не работает. Если бы всё работало, вас бы уволили",
-        "author": "Mosher’s Law of Software Engineering"
-    },
-    {
-        "text": "В хорошем дизайне добавление чего-то стоит дешевле, чем сама эта вещь",
-        "author": "Thomas C. Gale"
-    },
-    {
-        "text": "В теории, теория и практика неразделимы. На практике это не так",
-        "author": "Yoggi Berra"
-    },
-    {
-        "text": "Многие из вас знакомы с достоинствами программиста. Их всего три, и разумеется это: лень, нетерпеливость и гордыня",
-        "author": "Larry Wall"
-    },
-    {
-        "text": "Отладка кода — это как охота. Охота на баги",
-        "author": "Amit Kalantri"
-    },
-    {
-        "text": "Работает? Не трогай",
-        "author": "Любой программист"
-    },
-    {
-        "text": "Есть всего два типа языков программирования: те, на которые люди всё время ругаются, и те, которые никто не использует",
-        "author": "Bjarne Stroustrup"
-    },
-    {
-        "text": "Неработающая программа обычно приносит меньше вреда, чем работающая плохо",
-        "author": "Dave Thomas"
-    },
-    {
-        "text": "Молодые специалисты не умеют работать, а опытные специалисты умеют не работать",
-        "author": "Alexander Golov"
-    },
-    {
-        "text": "Преждевременная оптимизация — корень всех зол",
-        "author": "Donald Knuth"
-    },
-    {
-        "text": "Чтобы написать чистый код, мы сначала пишем грязный код, а затем рефакторим его",
-        "author": "Robert Martin"
-    },
-    {
-        "text": "Для каждой сложной задачи существует решение, которое является быстрым, простым и неправильным",
-        "author": "H.L. Mencken"
-    },
-    {
-        "text": "Тестирование не позволяет обнаружить такие ошибки, как создание не того приложения",
-        "author": "Jamie Zawinski"
-    },
-    {
-        "text": "Нельзя доверять коду, который вы не написали полностью сами",
-        "author": "Ken Thompson"
-    },
-    {
-        "text": "Доказательство с помощью аналогий — это обман",
-        "author": "Bjarne Stroustrup"
-    },
-    {
-        "text": "Модульность — фундаментальный аспект всех успешно работающих крупных систем",
-        "author": "Bjarne Stroustrup"
-    }
-]
+{
+    "ru": [
+        {
+            "text": "Пишите код так, как будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете",
+            "author": "Стив Макконнелл"
+        },
+        {
+            "text": "Сложность программы растет до тех пор, пока не превысит способности программиста",
+            "author": "Артур Блох. Законы Мэрфи"
+        },
+        {
+            "text": "Ходить по воде и разрабатывать программы, следуя ТЗ, очень просто… если они заморожены",
+            "author": "И. Берард"
+        },
+        {
+            "text": "Не волнуйтесь, если что-то не работает. Если бы всё работало, вас бы уволили",
+            "author": "Mosher’s Law of Software Engineering"
+        },
+        {
+            "text": "В хорошем дизайне добавление чего-то стоит дешевле, чем сама эта вещь",
+            "author": "Thomas C. Gale"
+        },
+        {
+            "text": "В теории, теория и практика неразделимы. На практике это не так",
+            "author": "Yoggi Berra"
+        },
+        {
+            "text": "Многие из вас знакомы с достоинствами программиста. Их всего три, и разумеется это: лень, нетерпеливость и гордыня",
+            "author": "Larry Wall"
+        },
+        {
+            "text": "Отладка кода — это как охота. Охота на баги",
+            "author": "Amit Kalantri"
+        },
+        {
+            "text": "Работает? Не трогай",
+            "author": "Любой программист"
+        },
+        {
+            "text": "Есть всего два типа языков программирования: те, на которые люди всё время ругаются, и те, которые никто не использует",
+            "author": "Bjarne Stroustrup"
+        },
+        {
+            "text": "Неработающая программа обычно приносит меньше вреда, чем работающая плохо",
+            "author": "Dave Thomas"
+        },
+        {
+            "text": "Молодые специалисты не умеют работать, а опытные специалисты умеют не работать",
+            "author": "Alexander Golov"
+        },
+        {
+            "text": "Преждевременная оптимизация — корень всех зол",
+            "author": "Donald Knuth"
+        },
+        {
+            "text": "Чтобы написать чистый код, мы сначала пишем грязный код, а затем рефакторим его",
+            "author": "Robert Martin"
+        },
+        {
+            "text": "Для каждой сложной задачи существует решение, которое является быстрым, простым и неправильным",
+            "author": "H.L. Mencken"
+        },
+        {
+            "text": "Тестирование не позволяет обнаружить такие ошибки, как создание не того приложения",
+            "author": "Jamie Zawinski"
+        },
+        {
+            "text": "Нельзя доверять коду, который вы не написали полностью сами",
+            "author": "Ken Thompson"
+        },
+        {
+            "text": "Доказательство с помощью аналогий — это обман",
+            "author": "Bjarne Stroustrup"
+        },
+        {
+            "text": "Модульность — фундаментальный аспект всех успешно работающих крупных систем",
+            "author": "Bjarne Stroustrup"
+        }
+    ],
+    "en": [
+        {
+            "text": "Write code as if a psycho who knows where you live will be maintaining it",
+            "author": "Steve McConnell"
+        },
+        {
+            "text": "The complexity of a program grows until it exceeds the capabilities of the programmer who must maintain it",
+            "author": "Arthur Bloch, Murphy's Laws of Computing"
+        },
+        {
+            "text": "Walking on water and developing software from a specification are easy if both are frozen",
+            "author": "Edward V. Berard"
+        },
+        {
+            "text": "Don't worry if it doesn't work right. If everything did, you'd be out of a job",
+            "author": "Mosher's Law of Software Engineering"
+        },
+        {
+            "text": "In good software design, adding new features is cheap, whereas fixing design mistakes is expensive",
+            "author": "Thomas C. Gale"
+        },
+        {
+            "text": "In theory, theory and practice are the same. In practice, they are not",
+            "author": "Yogi Berra"
+        },
+        {
+            "text": "There are three virtues of a programmer: laziness, impatience, and hubris",
+            "author": "Larry Wall"
+        },
+        {
+            "text": "Debugging is like hunting. It's like trying to find a needle in a haystack",
+            "author": "Amit Kalantri"
+        },
+        {
+            "text": "It works? Don't touch it",
+            "author": "Any programmer"
+        },
+        {
+            "text": "There are only two kinds of programming languages: those people always bitch about and those nobody uses",
+            "author": "Bjarne Stroustrup"
+        },
+        {
+            "text": "A non-working program ordinarily delivers less value than a broken one",
+            "author": "Dave Thomas"
+        },
+        {
+            "text": "Young specialists don't know how to work, and experienced specialists know how not to work",
+            "author": "Alexander Golov"
+        },
+        {
+            "text": "Premature optimization is the root of all evil",
+            "author": "Donald Knuth"
+        },
+        {
+            "text": "The cleaner and nicer the program, the faster it's going to run. And if it doesn't, it'll be easy to make it fast",
+            "author": "Robert Martin"
+        },
+        {
+            "text": "For every complex problem, there is a solution that is simple, neat, and wrong",
+            "author": "H.L. Mencken"
+        },
+        {
+            "text": "Testing shows the presence, not the absence of bugs",
+            "author": "Edsger W. Dijkstra"
+        },
+        {
+            "text": "You can't trust code that you did not totally create yourself",
+            "author": "Ken Thompson"
+        },
+        {
+            "text": "Proof by analogy is fraud",
+            "author": "Bjarne Stroustrup"
+        },
+        {
+            "text": "Modularity is the key to successful large-scale systems",
+            "author": "Bjarne Stroustrup"
+        }
+    ]
+}

@@ -5,18 +5,18 @@
         "duration": "01:37"
     },
     {
-        "title": "Aqua Caelestis",
-        "src": "./assets/sounds/Aqua Caelestis.mp3",
-        "duration": "00:39"
+        "title": "On a Good Day",
+        "src": "./assets/sounds/On a Good Day.mp3",
+        "duration": "04:06"
     },
     {
-        "title": "Ennio Morricone",
-        "src": "./assets/sounds/Ennio Morricone.mp3",
-        "duration": "01:37"
+        "title": "Graveyard",
+        "src": "./assets/sounds/Graveyard (Arty Remix).mp3",
+        "duration": "03:18"
     },
     {
-        "title": "Summer Wind",
-        "src": "./assets/sounds/Summer Wind.mp3",
-        "duration": "01:50"
+        "title": "Dreamer",
+        "src": "./assets/sounds/Dreamer.mp3",
+        "duration": "05:37"
     }
 ]
