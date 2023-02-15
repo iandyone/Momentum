@@ -1,6 +1,5 @@
 import { getRandomValue } from '../index.js';
 import { getTimeOfDay } from './greeting.js';
-import { appLanguage } from "../index.js";
 
 const timeOfDay = getTimeOfDay(new Date().getHours());
 let pictureNum = getRandomValue(1, 20);

@@ -4,7 +4,8 @@ import { showWeather } from "./modules/weather.js";
 import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
-export const appLanguage = 'en';
+import configureApp, { setAppLanguage } from "./modules/settings.js";
+export const appLanguage = localStorage.getItem('appLanguage') || 'en';
 
 window.addEventListener('load', getUserName);
 window.addEventListener('beforeunload', setUserName);
@@ -16,12 +17,18 @@ document.querySelector('.play-prev').addEventListener('click', playPrevTrack);
 document.querySelector('.slide-next').addEventListener('click', getSlideNext);
 document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
 document.querySelector('.settings-button').addEventListener('click', (e) => showSettings(e));
+document.querySelectorAll('.setting__option').forEach(lang => {
+    lang.addEventListener('click', setAppLanguage);
+});
 
+
+configureApp();
 showTime();
 showWeather('Minsk');
 getQuote();
-getBackgroundImage();
+// getBackgroundImage();
 renderPlayList();
+
 
 export function getRandomValue(min, max) {
     min = Math.ceil(min);
