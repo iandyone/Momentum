@@ -4,7 +4,7 @@ import { showWeather } from "./modules/weather.js";
 import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
-import configureApp, { setAppLanguage } from "./modules/settings.js";
+import configureApp, { chooseOptions, setAppLanguage, setElementVizability } from "./modules/settings.js";
 export const appLanguage = localStorage.getItem('appLanguage') || 'en';
 
 window.addEventListener('load', getUserName);
@@ -20,7 +20,13 @@ document.querySelector('.settings-button').addEventListener('click', (e) => show
 document.querySelectorAll('.setting__option').forEach(lang => {
     lang.addEventListener('click', setAppLanguage);
 });
+document.querySelectorAll('.modal__setting').forEach(item => {
+    item.addEventListener('click', chooseOptions)
+})
 
+document.querySelectorAll('.custom-checkbox-input').forEach(input => {
+    input.addEventListener('click', setElementVizability);
+})
 
 configureApp();
 showTime();
@@ -40,3 +46,9 @@ function showSettings(e) {
     e.target.classList.toggle('active');
     document.querySelector('.modal').classList.toggle('active');
 }
+
+document.addEventListener('click', e => {
+    if(e.target.checked) {
+        console.log(e.target.value);
+    }
+})

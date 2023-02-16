@@ -1,73 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="assets/favicon.ico" rel="shortcut icon" />
-  <link rel="stylesheet" href="./css/owfont-regular.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>momentum</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="./css/owfont-regular.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Momentum</title>
 </head>
 <body>
-  <header class="header">
-    <div class="player">
-      <div class="player-controls">
-          <button class="play-prev player-icon"></button>
-          <button class="play player-icon"></button>
-          <button class="play-next player-icon"></button>
+    <header class="header">
+        <div class="player" data-type='player'>
+            <div class="player-controls">
+                <button class="play-prev player-icon"></button>
+                <button class="play player-icon"></button>
+                <button class="play-next player-icon"></button>
+            </div>
+            <ul class="play-list"></ul>
         </div>
-        <ul class="play-list"></ul>
-    </div>
-    <div class="weather">
-      <input type="text" class="city" />
-      <i class="weather-icon owf"></i>
-      <div class="weather-error"></div>
-      <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
-        <span class="weather-humidity"></span>
-        <span class="weather-wind"></span>
-      </div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
-    </div>
-  </header>
-  <main class="main">
-    <div class="slider-icons">
-      <button class="slide-prev slider-icon"></button>
-      <button class="slide-next slider-icon"></button>
-    </div>
-    <time class="time"></time>
-    <date class="date"></date>
-    <div class="greeting-container">
-      <span class="greeting"></span>
-      <input type="text" class="name" />
-    </div>
-  </main>
-  <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
-      <div class="quote"></div>
-      <div class="author"></div>
-    </div>
-    <div class="settings-button"></div>
-    <div class="modal">
-        <nav class="modal__headers">
-            <ul>
-                <li><h5 class="modal__setting language active">Язык</h5></li>
-            </ul>
-        </nav>
-        <ul class="settings">
-            <li class="setting__item language">
-                <p class="setting__header">Язык приложения</p>
-                <ul class="setting__options">
-                    <li class="setting__option" data-lang="en">English</li>
-                    <li class="setting__option" data-lang="ru">Русский</li>
+        <div class="weather" data-type='weather'>
+            <input type="text" class="city" />
+            <i class="weather-icon owf"></i>
+            <div class="weather-error"></div>
+            <div class="description-container">
+                <span class="temperature"></span>
+                <span class="weather-description"></span>
+                <span class="weather-humidity"></span>
+                <span class="weather-wind"></span>
+            </div>
+            <div class="wind"></div>
+            <div class="humidity"></div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="slider-icons">
+            <button class="slide-prev slider-icon"></button>
+            <button class="slide-next slider-icon"></button>
+        </div>
+        <time class="time" data-type='time'></time>
+        <date class="date" data-type='date'></date>
+        <div class="greeting-container" data-type='greeting'>
+            <span class="greeting"></span>
+            <input type="text" class="name" />
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="quotes" data-type='quotes'>
+            <button class="change-quote"></button>
+            <div>
+                <div class="quote"></div>
+                <div class="author"></div>
+            </div>
+        </div >
+        <div class="settings-button"></div>
+        <div class="modal active">
+            <nav class="modal__headers">
+                <ul>
+                    <li><h5 class="modal__setting language active" data-setting="language">Язык</h5></li>
+                    <li><h5 class="modal__setting show" data-setting="show">Отображение</h5></li>
                 </ul>
-            </li>
-        </ul>
-    </div>
-  </footer>
-  <script type="module" src="js/index.js"></script>
+            </nav>
+            <ul class="settings">
+                <li class="setting__item language active" data-option="language">
+                    <p class="setting__header">Язык приложения</p>
+                    <ul class="setting__options">
+                        <li class="setting__option" data-lang="en">English</li>
+                        <li class="setting__option" data-lang="ru">Русский</li>
+                    </ul>
+                </li>
+                <li class="setting__item show" data-option="show">
+                    <p class="setting__header" id="setting-show-header">Widgets1</p>
+                    <ul class="setting__options option__time">
+                        <li class="setting__widget time__block">
+                            <p class="element__time" id="setting-show-time">Время</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-1" value="time" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-1">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-1"> </label>
+                            </div>
+                        </li>
+                        <li class="setting__widget date__block">
+                            <p class="element__time" id="setting-show-date">Дата</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-2" value="date" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-2">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-2"></label>
+                            </div>
+                        </li>
+                        <li class="setting__widget greeting__block">
+                            <p class="element__time" id="setting-show-greeting">Приветствие</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-3" value="greeting" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-3">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-3"></label>
+                            </div>
+                        </li>
+                        <li class="setting__widget quotes__block">
+                            <p class="element__time" id="setting-show-quotes">Цитаты</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-4" value="quotes" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-4">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-4"></label>
+                            </div>
+                        </li>
+                        <li class="setting__widget player__block">
+                            <p class="element__time" id="setting-show-player">Плеер</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-5" value="player" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-5">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-5"></label>
+                            </div>
+                        </li>
+                        <li class="setting__widget weather__block">
+                            <p class="element__time" id="setting-show-weather">Погода</p>
+                            <div class="custom-checkbox">
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-6" value="weather" checked/>
+                                <label class="custom-checkbox-label" for="custom-checkbox-discovery-6">
+                                    <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-6"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="module" src="js/index.js"></script>
 </body>
+
 </html>
