@@ -53,26 +53,27 @@
             </div>
         </div >
         <div class="settings-button"></div>
-        <div class="modal active">
+        <div class="modal">
             <nav class="modal__headers">
                 <ul>
                     <li><h5 class="modal__setting language active" data-setting="language">Язык</h5></li>
                     <li><h5 class="modal__setting show" data-setting="show">Отображение</h5></li>
+                    <li><h5 class="modal__setting images" data-setting="images">Заставка</h5></li>
                 </ul>
             </nav>
             <ul class="settings">
                 <li class="setting__item language active" data-option="language">
-                    <p class="setting__header">Язык приложения</p>
+                    <p class="setting__header language">Язык приложения</p>
                     <ul class="setting__options">
-                        <li class="setting__option" data-lang="en">English</li>
-                        <li class="setting__option" data-lang="ru">Русский</li>
+                        <li class="setting__option language" data-lang="en">English</li>
+                        <li class="setting__option language" data-lang="ru">Русский</li>
                     </ul>
                 </li>
                 <li class="setting__item show" data-option="show">
-                    <p class="setting__header" id="setting-show-header">Widgets1</p>
+                    <p class="setting__header" id="setting-widgets-header">Widgets1</p>
                     <ul class="setting__options option__time">
                         <li class="setting__widget time__block">
-                            <p class="element__time" id="setting-show-time">Время</p>
+                            <p class="element__time" id="setting-widgets-time">Время</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-1" value="time" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-1">
@@ -80,7 +81,7 @@
                             </div>
                         </li>
                         <li class="setting__widget date__block">
-                            <p class="element__time" id="setting-show-date">Дата</p>
+                            <p class="element__time" id="setting-widgets-date">Дата</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-2" value="date" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-2">
@@ -88,7 +89,7 @@
                             </div>
                         </li>
                         <li class="setting__widget greeting__block">
-                            <p class="element__time" id="setting-show-greeting">Приветствие</p>
+                            <p class="element__time" id="setting-widgets-greeting">Приветствие</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-3" value="greeting" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-3">
@@ -96,7 +97,7 @@
                             </div>
                         </li>
                         <li class="setting__widget quotes__block">
-                            <p class="element__time" id="setting-show-quotes">Цитаты</p>
+                            <p class="element__time" id="setting-widgets-quotes">Цитаты</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-4" value="quotes" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-4">
@@ -104,7 +105,7 @@
                             </div>
                         </li>
                         <li class="setting__widget player__block">
-                            <p class="element__time" id="setting-show-player">Плеер</p>
+                            <p class="element__time" id="setting-widgets-player">Плеер</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-5" value="player" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-5">
@@ -112,7 +113,7 @@
                             </div>
                         </li>
                         <li class="setting__widget weather__block">
-                            <p class="element__time" id="setting-show-weather">Погода</p>
+                            <p class="element__time" id="setting-widgets-weather">Погода</p>
                             <div class="custom-checkbox">
                                 <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-6" value="weather" checked/>
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-6">
@@ -121,10 +122,30 @@
                         </li>
                     </ul>
                 </li>
+                <li class="setting__item images" data-option="images">
+                    <div class="images__source-bar">
+                        <p class="setting__header images">Источник фоновых изображений</p>
+                        <ul class="setting__options">
+                            <li class="setting__option images" data-source="github">GitHub</li>
+                            <li class="setting__option images" data-source="unsplash">Unsplash</li>
+                        </ul>
+                    </div>
+                    <div class="images__search-bar">
+                        <p class="setting__header images__search">Поиск изображений</p>
+                        <input type="text" class="images__input"/>
+                        <ul class="images__taglist">
+                            <li><p class="images__tag" data-value="nature">nature</p></li>
+                            <li><p class="images__tag" data-value="space">space</p></li>
+                            <li><p class="images__tag" data-value="travel">travel</p></li>
+                            <li><p class="images__tag" data-value="films">films</p></li>
+                            <li><p class="images__tag" data-value="animals">animals</p></li>
+                        </ul>
+                    </div>
+                    <p class="setting__notes">Примечание:</p>
+                </li>
             </ul>
         </div>
     </footer>
     <script type="module" src="js/index.js"></script>
 </body>
-
 </html>
