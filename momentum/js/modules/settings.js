@@ -12,7 +12,7 @@ const settingsData = {
                 header: 'Язык приложения',
             },
             widgets: {
-                header: 'Отображение',
+                header: 'Виджеты',
                 time: 'Время',
                 date: 'Дата',
                 greeting: 'Приветствие',
@@ -26,7 +26,7 @@ const settingsData = {
                 },
                 search: {
                     header: 'Поиск',
-                    placeholder: 'Поиск изображений по тегам',
+                    placeholder: 'Поиск изображений по тегу',
                 },
                 note: {
                     github: 'Примечание: GitHub изображения имеют ограниченное количество и расположены в строгом порядке. Доступен переключение на следущее и предыдущее изображение',
@@ -43,10 +43,10 @@ const settingsData = {
         },
         options: {
             language: {
-                header: 'App Language',
+                header: 'Language',
             },
             widgets: {
-                header: 'Show',
+                header: 'Widgets',
                 time: 'Time',
                 date: 'Date',
                 greeting: 'Greeting',
@@ -89,7 +89,6 @@ function translateSettings() {
     document.querySelector('.setting__notes').textContent = settingsData[appLanguage].options.background.note[currentImageSource];
     document.querySelector('.setting__header.images__search').textContent = settingsData[appLanguage].options.background.search.header;
     document.querySelector('.images__input').placeholder = settingsData[appLanguage].options.background.search.placeholder;
-    
 }
 
 export default function configureApp() {
@@ -101,7 +100,7 @@ export default function configureApp() {
 }
 
 export function showSettings(e) {
-    e.target.classList.toggle('active');
+    e.target.closest(`DIV`).classList.toggle('active');
     document.querySelector('.modal').classList.toggle('active');
 }
 

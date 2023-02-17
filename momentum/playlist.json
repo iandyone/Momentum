@@ -1,8 +1,8 @@
 [
     {
-        "title": "River Flows In You",
-        "src": "./assets/sounds/River Flows In You.mp3",
-        "duration": "01:37"
+        "title": "It Would Never Stop Snowing",
+        "src": "./assets/sounds/I Wish It Would Never Stop Snowing.mp3",
+        "duration": "03:16"
     },
     {
         "title": "On a Good Day",
@@ -10,13 +10,13 @@
         "duration": "04:06"
     },
     {
+        "title": "Come Alive",
+        "src": "./assets/sounds/Come Alive.mp3",
+        "duration": "05:31"
+    },
+    {
         "title": "Graveyard",
         "src": "./assets/sounds/Graveyard (Arty Remix).mp3",
         "duration": "03:18"
-    },
-    {
-        "title": "Dreamer",
-        "src": "./assets/sounds/Dreamer.mp3",
-        "duration": "05:37"
     }
 ]
