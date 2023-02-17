@@ -61,14 +61,14 @@ function displayWidget(status) {
 function setWidgetData(data) {
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    temperature.textContent = `${data.main.temp}°C`;
+    temperature.textContent = `${data.main.temp} °C`;
     weatherDescription.textContent = data.weather[0].description;
 
     if (appLanguage === "ru") {
         weatherWind.textContent = `Ветер: ${Math.round(data.wind.speed)} м/с`;
         weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;   
     } else if (appLanguage === "en") {
-        weatherWind.textContent = `Wind: ${Math.round(data.wind.speed)} м/с`;
+        weatherWind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
         weatherHumidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
     }
 }
