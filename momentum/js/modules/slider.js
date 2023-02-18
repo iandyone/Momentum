@@ -9,7 +9,7 @@ function getBackgroundImageGitHub() {
     if (pictureNum < 10) {
         pictureNum = `0${pictureNum}`;
     }
-    
+
     const souseLink = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${pictureNum}.jpg`;
 
     img.src = souseLink;
@@ -27,7 +27,7 @@ export function getSlideNext() {
 
 export function getSlidePrev() {
     pictureNum = (pictureNum == 1) ? 20 : +pictureNum - 1;
-    changeBackgroundImage()   ; 
+    changeBackgroundImage();
 }
 
 function changeBackgroundImage() {
@@ -50,12 +50,18 @@ async function getBackgroundImageUnsplash() {
         let unsplashFetchLink = `https://api.unsplash.com/photos/random?orientation=landscape&query=${searchTag}&client_id=e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17`;
         const response = await fetch(unsplashFetchLink);
 
-        if(response.status === 200) {
+        if (response.status === 200) {
             const data = await response.json();
             img.src = data.urls.regular;
             img.onload = () => {
                 document.body.style.backgroundImage = `url("${img.src}")`;
             };
+        } else if (response.status === 403) {
+            localStorage.setItem('backgroundSourse', `github`);
+            const event = new Event("click");
+            document.querySelector('[data-source="github"]').dispatchEvent(event);
+            alert('Превышен лимин изображений для unsplash. Источник изображений изменен на github')
+            changeBackgroundImage();
         } else {
             localStorage.setItem('imageTag', 'nature');
             await getBackgroundImageUnsplash();

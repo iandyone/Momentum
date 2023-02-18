@@ -4,7 +4,7 @@ import { showWeather } from "./modules/weather.js";
 import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
-import configureApp, { chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
+import configureApp, { applySeatchChanges, chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
 export const appLanguage = localStorage.getItem('appLanguage') || 'en';
 
 window.addEventListener('load', getUserName);
@@ -18,6 +18,7 @@ document.querySelector('.slide-next').addEventListener('click', getSlideNext);
 document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
 document.querySelector('.settings-button').addEventListener('click', showSettings);
 document.querySelector('.images__input').addEventListener('change', setImagesSearchTag);
+document.querySelector('.images__input').addEventListener('change', applySeatchChanges);
 
 document.querySelectorAll('.setting__option.language').forEach(lang => {
     lang.addEventListener('click', setAppLanguage);
@@ -32,7 +33,10 @@ document.querySelectorAll('.custom-checkbox-input').forEach(input => {
     input.addEventListener('click', setElementVizability);
 });
 document.querySelectorAll('.images__tag').forEach(tag => {
-    tag.addEventListener('click', chooseImageTag);
+    tag.addEventListener('click', (e) => {
+        chooseImageTag(e);
+        applySeatchChanges();
+    });
 });
 
 

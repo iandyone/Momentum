@@ -311,7 +311,7 @@ body {
 }
 
 .hidden {
-    opacity: 0;
+    opacity: 0 !important;
     user-select: none;
     pointer-events: none;
     transition: all 0.2s ease;
@@ -541,6 +541,12 @@ footer {
     font-size: 14px;
     hyphens: auto;
     line-height: 120%;
+    position: relative;
+}
+.images__search-input {
+    position: relative;
+    display: inline-block;
+    width: 90%;
 }
 
 .images__input {
@@ -548,9 +554,27 @@ footer {
     font-size: 14px;
     height: 25px;
     margin-bottom: 10px;
-    width: 90%;
+    width: 100%;
     border-bottom: 1px solid #a6a6a6;
+    position: relative;
 }
+
+.images__apply {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    transform: translateY(-70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    height: 20px;
+    padding-left: 22px;
+    color: rgb(116 228 68);
+    opacity: 0.8;
+    background: url('../assets//svg/check.svg') left no-repeat;
+}
+
 
 .images__input::placeholder {
      color: white;

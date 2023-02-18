@@ -1,4 +1,5 @@
 import { appLanguage } from "../index.js";
+import { getSlideNext } from "./slider.js";
 
 const settingsData = {
     ru: {
@@ -177,7 +178,7 @@ export function setBackgroundImageSource(event) {
 
     sources.forEach(source => {
         if (source === event.target) {
-            const searchBarVisability = (event.target.dataset.source == 'unsplash')? `block` : 'none';
+            const searchBarVisability = (event.target.dataset.source == 'unsplash') ? `block` : 'none';
             source.classList.add('active');
             document.querySelector('.setting__notes').textContent = settingsData[appLanguage].options.background.note[source.dataset.source];
             searchBar.style.display = searchBarVisability;
@@ -212,7 +213,20 @@ export function setImagesSearchTag(e) {
 function setImagesSearchBarVisability() {
     const searchBar = document.querySelector(`.images__search-bar`);
     const unsplashElement = document.querySelector('[data-source="unsplash"]');
-    const searchBarVisability = (unsplashElement.classList.contains('active'))? `block` : 'none';
-    
+    const searchBarVisability = (unsplashElement.classList.contains('active')) ? `block` : 'none';
+
     searchBar.style.display = searchBarVisability;
+}
+
+export function applySeatchChanges() {
+    const imagesSearchInput = document.querySelector('.images__apply');
+    imagesSearchInput.classList.remove('hidden')
+  
+    setTimeout(() => {
+        getSlideNext();
+        setTimeout(() => {
+            imagesSearchInput.classList.add('hidden');
+        }, 5000);
+    }, 1500);
+
 }
