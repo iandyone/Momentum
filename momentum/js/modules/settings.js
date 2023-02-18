@@ -74,18 +74,18 @@ const settingsData = {
 
 function translateSettings() {
     // Language
-    document.querySelector('.modal__setting.language').textContent = settingsData[appLanguage].headers.language;
+    document.querySelector('.settings__header.language').textContent = settingsData[appLanguage].headers.language;
     document.querySelector('.setting__header').textContent = settingsData[appLanguage].options.language.header;
 
     // Show
-    document.querySelector('.modal__setting.show').textContent = settingsData[appLanguage].headers.widgets;
+    document.querySelector('.settings__header.show').textContent = settingsData[appLanguage].headers.widgets;
     for (let key in settingsData[appLanguage].options.widgets) {
         document.querySelector(`#setting-widgets-${key}`).textContent = settingsData[appLanguage].options.widgets[key];
     }
 
     // Background
     const currentImageSource = localStorage.getItem('backgroundSourse');
-    document.querySelector('.modal__setting.images').textContent = settingsData[appLanguage].headers.background;
+    document.querySelector('.settings__header.images').textContent = settingsData[appLanguage].headers.background;
     document.querySelector('.setting__header.images').textContent = settingsData[appLanguage].options.background.source.header;
     document.querySelector('.setting__notes').textContent = settingsData[appLanguage].options.background.note[currentImageSource];
     document.querySelector('.setting__header.images__search').textContent = settingsData[appLanguage].options.background.search.header;
@@ -98,11 +98,14 @@ export default function configureApp() {
     setDefaultSettingsLanguage();
     translateSettings();
     setImagesSearchBarVisability();
+
+    // document.body.style.background = `url("./assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5)`
+    // document.body.style.transition = `background-image 1s ease-in-out`
 }
 
 export function showSettings(e) {
     e.target.closest(`DIV`).classList.toggle('active');
-    document.querySelector('.modal').classList.toggle('active');
+    document.querySelector('.settings__menu').classList.toggle('active');
 }
 
 export function setAppLanguage(event) {
@@ -130,7 +133,7 @@ function setDefaultSettingsLanguage() {
 }
 
 export function chooseOptions(event) {
-    const optionsHeaders = document.querySelectorAll('.modal__setting');
+    const optionsHeaders = document.querySelectorAll('.settings__header');
 
     optionsHeaders.forEach(header => {
         if (header == event.target) {

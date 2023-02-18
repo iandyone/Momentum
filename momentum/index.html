@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Momentum</title>
 </head>
+
 <body>
     <header class="header">
         <div class="player" data-type='player'>
@@ -51,15 +53,21 @@
                 <div class="quote"></div>
                 <div class="author"></div>
             </div>
-        </div >
-        <div class="settings-button"><span></span></div>
-        <div class="todo-button"><span></span></div>
-        <div class="modal">
-            <nav class="modal__headers">
+        </div>
+        <div class="settings__button"><span></span></div>
+        <div class="todos__button"><span></span></div>
+        <div class="settings__menu">
+            <nav class="settings__headers">
                 <ul>
-                    <li><h5 class="modal__setting language active" data-setting="language">Язык</h5></li>
-                    <li><h5 class="modal__setting show" data-setting="show">Отображение</h5></li>
-                    <li><h5 class="modal__setting images" data-setting="images">Заставка</h5></li>
+                    <li>
+                        <h5 class="settings__header language active" data-setting="language">Язык</h5>
+                    </li>
+                    <li>
+                        <h5 class="settings__header show" data-setting="show">Отображение</h5>
+                    </li>
+                    <li>
+                        <h5 class="settings__header images" data-setting="images">Заставка</h5>
+                    </li>
                 </ul>
             </nav>
             <ul class="settings">
@@ -76,7 +84,8 @@
                         <li class="setting__widget time__block">
                             <p class="element__time" id="setting-widgets-time">Время</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-1" value="time" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-1"
+                                    value="time" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-1">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-1"> </label>
                             </div>
@@ -84,7 +93,8 @@
                         <li class="setting__widget date__block">
                             <p class="element__time" id="setting-widgets-date">Дата</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-2" value="date" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-2"
+                                    value="date" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-2">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-2"></label>
                             </div>
@@ -92,7 +102,8 @@
                         <li class="setting__widget greeting__block">
                             <p class="element__time" id="setting-widgets-greeting">Приветствие</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-3" value="greeting" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-3"
+                                    value="greeting" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-3">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-3"></label>
                             </div>
@@ -100,7 +111,8 @@
                         <li class="setting__widget quotes__block">
                             <p class="element__time" id="setting-widgets-quotes">Цитаты</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-4" value="quotes" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-4"
+                                    value="quotes" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-4">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-4"></label>
                             </div>
@@ -108,7 +120,8 @@
                         <li class="setting__widget player__block">
                             <p class="element__time" id="setting-widgets-player">Плеер</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-5" value="player" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-5"
+                                    value="player" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-5">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-5"></label>
                             </div>
@@ -116,7 +129,8 @@
                         <li class="setting__widget weather__block">
                             <p class="element__time" id="setting-widgets-weather">Погода</p>
                             <div class="custom-checkbox">
-                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-6" value="weather" checked/>
+                                <input class="custom-checkbox-input" type="checkbox" id="custom-checkbox-discovery-6"
+                                    value="weather" checked />
                                 <label class="custom-checkbox-label" for="custom-checkbox-discovery-6">
                                     <label class="custom-checkbox-label-aux" for="custom-checkbox-discovery-6"></label>
                             </div>
@@ -134,22 +148,45 @@
                     <div class="images__search-bar">
                         <p class="setting__header images__search">Поиск изображений</p>
                         <div class="images__search-input">
-                            <input type="text" class="images__input"/>
+                            <input type="text" class="images__input" />
                             <div class="images__apply hidden">Applied</div>
                         </div>
                         <ul class="images__taglist">
-                            <li><p class="images__tag" data-value="nature">nature</p></li>
-                            <li><p class="images__tag" data-value="space">space</p></li>
-                            <li><p class="images__tag" data-value="travel">travel</p></li>
-                            <li><p class="images__tag" data-value="films">films</p></li>
-                            <li><p class="images__tag" data-value="animals">animals</p></li>
+                            <li>
+                                <p class="images__tag" data-value="nature">nature</p>
+                            </li>
+                            <li>
+                                <p class="images__tag" data-value="space">space</p>
+                            </li>
+                            <li>
+                                <p class="images__tag" data-value="travel">travel</p>
+                            </li>
+                            <li>
+                                <p class="images__tag" data-value="films">films</p>
+                            </li>
+                            <li>
+                                <p class="images__tag" data-value="animals">animals</p>
+                            </li>
                         </ul>
                     </div>
                     <p class="setting__notes">Примечание:</p>
                 </li>
             </ul>
         </div>
+        <div class="todos__menu">
+            <div class="todos__header">Todos</div>
+            <div class="todos__body">
+                <div class="todos__placeholder">
+                    <p class="todos__text">Add a todo to get started</p>
+                    <button class="todos__start-button">New Todo</button>
+                </div>
+                <ul class="todos__list todo hidden">
+                </ul>
+            </div>
+            <input type="text" class="todos__input hidden" placeholder="New Todo"/>
+        </div>
     </footer>
     <script type="module" src="js/index.js"></script>
 </body>
+
 </html>

@@ -4,7 +4,9 @@ import { showWeather } from "./modules/weather.js";
 import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
-import configureApp, { applySeatchChanges, chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
+import configureApp from "./modules/settings.js";
+import { applySeatchChanges, chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
+import { addTodo, fetchTodos, hidePlaceholder, showTodos } from "./modules/todos.js";
 export const appLanguage = localStorage.getItem('appLanguage') || 'en';
 
 window.addEventListener('load', getUserName);
@@ -16,9 +18,13 @@ document.querySelector('.play-next').addEventListener('click', playNextTrack);
 document.querySelector('.play-prev').addEventListener('click', playPrevTrack);
 document.querySelector('.slide-next').addEventListener('click', getSlideNext);
 document.querySelector('.slide-prev').addEventListener('click', getSlidePrev);
-document.querySelector('.settings-button').addEventListener('click', showSettings);
+document.querySelector('.settings__button').addEventListener('click', showSettings);
+document.querySelector('.todos__button').addEventListener('click', showTodos);
 document.querySelector('.images__input').addEventListener('change', setImagesSearchTag);
 document.querySelector('.images__input').addEventListener('change', applySeatchChanges);
+document.querySelector('.todos__start-button').addEventListener('click', hidePlaceholder);
+document.querySelector('.todos__input').addEventListener('change', addTodo);
+
 
 document.querySelectorAll('.setting__option.language').forEach(lang => {
     lang.addEventListener('click', setAppLanguage);
@@ -26,7 +32,7 @@ document.querySelectorAll('.setting__option.language').forEach(lang => {
 document.querySelectorAll('.setting__option.images').forEach(source => {
     source.addEventListener('click', setBackgroundImageSource);
 });
-document.querySelectorAll('.modal__setting').forEach(option => {
+document.querySelectorAll('.settings__header').forEach(option => {
     option.addEventListener('click', chooseOptions);
 });
 document.querySelectorAll('.custom-checkbox-input').forEach(input => {
@@ -41,6 +47,7 @@ document.querySelectorAll('.images__tag').forEach(tag => {
 
 
 configureApp();
+fetchTodos()
 showTime();
 showWeather('Minsk');
 getQuote();
