@@ -1,4 +1,4 @@
-import { getRandomValue } from '../index.js';
+import { appLanguage, getRandomValue } from '../index.js';
 import { getTimeOfDay } from './greeting.js';
 
 const timeOfDay = getTimeOfDay(new Date().getHours());
@@ -57,11 +57,14 @@ async function getBackgroundImageUnsplash() {
                 document.body.style.backgroundImage = `url("${img.src}")`;
             };
         } else if (response.status === 403) {
-            localStorage.setItem('backgroundSourse', `github`);
             const event = new Event("click");
+            const message = (appLanguage === 'en') ? 'The image limit for Unsplash has been exceeded. Image source changed to GitHub' : `Превышен лимин изображений для Unsplash. Источник изображений изменен на GitHub`
+
             document.querySelector('[data-source="github"]').dispatchEvent(event);
-            alert('Превышен лимин изображений для unsplash. Источник изображений изменен на github')
+            alert(message);
+            localStorage.setItem('backgroundSourse', `github`);
             changeBackgroundImage();
+            return;
         } else {
             localStorage.setItem('imageTag', 'nature');
             await getBackgroundImageUnsplash();

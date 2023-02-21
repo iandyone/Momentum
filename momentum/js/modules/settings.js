@@ -104,8 +104,10 @@ export default function configureApp() {
 }
 
 export function showSettings(e) {
-    e.target.closest(`DIV`).classList.toggle('active');
+    document.querySelector('.todos__menu').classList.remove('active');
+    document.querySelector('.todos__button').classList.remove('active');
     document.querySelector('.settings__menu').classList.toggle('active');
+    e.target.closest(`DIV`).classList.toggle('active');
 }
 
 export function setAppLanguage(event) {
@@ -222,8 +224,10 @@ function setImagesSearchBarVisability() {
 }
 
 export function applySeatchChanges() {
+    const message = (appLanguage === 'en') ? 'Applied' : 'Сохранено';
     const imagesSearchInput = document.querySelector('.images__apply');
-    imagesSearchInput.classList.remove('hidden')
+    imagesSearchInput.textContent = message;
+    imagesSearchInput.classList.remove('hidden');
   
     setTimeout(() => {
         getSlideNext();
@@ -231,5 +235,4 @@ export function applySeatchChanges() {
             imagesSearchInput.classList.add('hidden');
         }, 5000);
     }, 1500);
-
 }

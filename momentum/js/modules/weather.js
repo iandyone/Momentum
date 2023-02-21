@@ -29,11 +29,14 @@ async function getWeather(location) {
             const data = await res.json();
             setWidgetData(data);
         } else if (res.status === 404) {
-            throw new Error(`Город не найден`);
+            const message = (appLanguage === 'en') ? "City not found" : "Город не найден";
+            throw new Error(message);
         } else if (!location) {
-            throw new Error(`Укажите название города`);
+            const message = (appLanguage === 'en') ? "Write the name of the city" : "Укажите название города";
+            throw new Error(message);
         } else {
-            throw new Error(`Непредвиденная ошибка`);
+            const message = (appLanguage === 'en') ? "Unexpected error" : "Непредвиденная ошибка";
+            throw new Error(message);
         }
     } catch (error) {
         weatherError.textContent = error.message;

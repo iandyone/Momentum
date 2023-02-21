@@ -345,13 +345,13 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 14px;
     transition: all 0.3s ease;
-    opacity: 0.65;
+    /* opacity: 1; */
 }
 
 .settings__button:hover span,
 .todos__button:hover span {
     opacity: 1;
-    transition: all .3 ease;
+    transition: all 0.3 ease;
 }
 
 .settings__button:hover,
@@ -361,6 +361,7 @@ footer {
     cursor: pointer;
     opacity: 1;
     background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     transition: all 0.3s ease;
 }
 
@@ -370,7 +371,6 @@ footer {
     width: 20px;
     height: 20px;
     background: url("../assets/svg/settings.svg") center no-repeat;
-    opacity: 0.5;
     transform: rotate(0deg);
     transition: all 0.3s ease, rotate 1s ease;
 }
@@ -380,10 +380,9 @@ footer {
 }
 
 .settings__button span:hover,
-.todos__button span:hover, 
+.todos__button span:hover,
 .todos__button.active span {
     cursor: pointer;
-    opacity: 1;
     transition: all 0.3s ease;
 }
 
@@ -394,7 +393,8 @@ footer {
     transition: all 0.3s ease;
 }
 
-.settings__menu, .todos__menu {
+.settings__menu,
+.todos__menu {
     display: none;
     opacity: 0;
     user-select: none;
@@ -618,8 +618,6 @@ footer {
     left: 70px;
 }
 
-
-
 /* ================= */
 
 .todos__menu {
@@ -639,12 +637,10 @@ footer {
     opacity: 1;
 }
 
-
 .todos__header {
     min-width: 45px;
     margin-bottom: 21px;
 }
-
 
 .todos__body {
     flex: 1 1 auto;
@@ -654,8 +650,18 @@ footer {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    max-height: 180px;
+    max-height: 370px;
     overflow: auto;
+}
+
+.todos__body::-webkit-scrollbar {
+    width: 3px;
+}
+.todos__body::-webkit-scrollbar-track {
+    background-color: red;
+}
+.todos__body::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .todos__placeholder {
@@ -665,13 +671,11 @@ footer {
     align-items: center;
 }
 
-
 .todos__text {
     font-weight: 400;
-    opacity: .65;
+    opacity: 0.65;
     word-wrap: break-word;
 }
-
 
 .todos__start-button {
     width: 115px;
@@ -685,7 +689,6 @@ footer {
     color: #fff;
 }
 
-
 .todos__input {
     user-select: none;
     overflow-wrap: break-word;
@@ -695,11 +698,9 @@ footer {
     padding: 8px 21px;
     padding-left: 0;
     display: block;
-    /* opacity: .65; */
     border: none;
     font-size: 1rem;
     overflow: hidden;
-    /* border: 1px solid red; */
     font-weight: 16;
     align-self: flex-end;
     justify-self: flex-end;
@@ -707,6 +708,9 @@ footer {
     opacity: 1;
     color: #fff;
     font-weight: 400;
+
+    padding-left: 30px;
+    background: url('../assets/svg/status-new.svg') left center no-repeat;
 }
 
 .todos__list {
@@ -719,9 +723,53 @@ footer {
 .todo__item {
     display: flex;
     column-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo__item.compleated .todo__status {
+    background-image: url("../assets/svg/status-compleated.svg");
+}
+
+.todo__status:hover {
+    cursor: pointer;
+}
+
+.todo__status {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/svg/status-avaible.svg");
+    transition: all .1s ease;
 }
 
 .todo__text {
-    max-width: 90%;
+    flex: 1 1 auto;
+    font-weight: 400;
     word-wrap: break-word;
+    font-size: 16px;
 }
+
+.todo__item.compleated .todo__text {
+    opacity: .5;
+}
+
+.todo__button {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/svg/delete-gray.svg");
+    transition: all .1s ease;
+}
+
+.todo__button:hover {
+    cursor: pointer;
+}
+
+.todo__button:active, .todo__status:active {
+    transform: scale(0.85);
+    transition: all .2s ease;
+}
+
