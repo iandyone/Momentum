@@ -69,7 +69,7 @@ function setWidgetData(data) {
 
     if (appLanguage === "ru") {
         weatherWind.textContent = `Ветер: ${Math.round(data.wind.speed)} м/с`;
-        weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;   
+        weatherHumidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;
     } else if (appLanguage === "en") {
         weatherWind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
         weatherHumidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
@@ -77,7 +77,14 @@ function setWidgetData(data) {
 }
 
 function getWeatherCity(location) {
-    if (localStorage.getItem('city')) {
+    const currentCity = localStorage.getItem('city')
+
+    if (currentCity) {
+        if (currentCity === location) {
+            const city = (appLanguage === 'en') ? 'Minsk' : 'Минск';
+            localStorage.setItem('city', city);
+            return city;
+        }
         return localStorage.getItem('city');
     }
 

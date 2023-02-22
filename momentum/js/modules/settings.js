@@ -20,6 +20,7 @@ const settingsData = {
                 quotes: 'Цитаты',
                 player: 'Плеер',
                 weather: 'Погода',
+                todo: 'Список дел'
             },
             background: {
                 source: {
@@ -54,6 +55,7 @@ const settingsData = {
                 quotes: 'Quotes',
                 player: 'Player',
                 weather: 'Weather',
+                todo: 'Todo'
             },
             background: {
                 source: {
