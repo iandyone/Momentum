@@ -773,3 +773,31 @@ footer {
     transition: all .2s ease;
 }
 
+
+.info {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 15px;
+}
+.info__author {
+    opacity: .65;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+.info__author:hover {
+    opacity: 1;
+    transition: all .3s ease;
+}
+.info__logo {
+    height: 37px;
+    opacity: .65;
+    transition: all .2s ease;
+}
+
+.info__logo:hover{
+    opacity: 1;
+    transition: all .3s ease;
+}
