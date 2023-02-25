@@ -17,6 +17,7 @@ export function showWeather(location) {
         getWeather(city.value);
         localStorage.setItem('city', city.value);
     };
+
     getWeather(city.value);
 }
 
@@ -77,10 +78,10 @@ function setWidgetData(data) {
 }
 
 function getWeatherCity(location) {
-    const currentCity = localStorage.getItem('city')
+    const currentCity = localStorage.getItem('city');
 
     if (currentCity) {
-        if (currentCity === location) {
+        if (currentCity === location || currentCity === 'Минск') {
             const city = (appLanguage === 'en') ? 'Minsk' : 'Минск';
             localStorage.setItem('city', city);
             return city;

@@ -25,7 +25,6 @@ document.querySelector('.images__input').addEventListener('change', applySeatchC
 document.querySelector('.todos__start-button').addEventListener('click', hidePlaceholder);
 document.querySelector('.todos__input').addEventListener('change', addTodo);
 
-
 document.querySelectorAll('.setting__option.language').forEach(lang => {
     lang.addEventListener('click', setAppLanguage);
 });
@@ -46,14 +45,35 @@ document.querySelectorAll('.images__tag').forEach(tag => {
 });
 
 
-changeBackgroundImage();
-configureApp();
-showTime();
-showWeather('Minsk');
-renderPlayList();
-getQuote();
-fetchTodos();
 
+main();
+
+
+
+function main() {
+    changeBackgroundImage();
+    configureApp();
+    showTime();
+    showWeather('Minsk');
+    renderPlayList();
+    getQuote();
+    fetchTodos();
+
+    console.log(`  
+-------------------------------------------------------------------------
+  Насчитал 136.5, расчитываю приблизительно на такую оценку)
+
+- В настройках фона помимо предложенных тегов можно задать и свои.
+  Источников изображений два - катастрофически не хватает времени(
+
+- Продвинутый плеер сделать не успел. Музыка и правда переключается по кругу.
+  Если лень слушать (первый и второй самые короткие) - прошу просто поверить на слово )
+  Из расширенного списка - трек можно запустить кликом по нему.
+
+  Спасибо за отзыв! 
+--------------------------------------------------------------------------
+    `)
+}
 
 export function getRandomValue(min, max) {
     min = Math.ceil(min);

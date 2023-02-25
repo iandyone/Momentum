@@ -5,11 +5,8 @@ const timeOfDay = getTimeOfDay(new Date().getHours());
 let pictureNum = getRandomValue(1, 20);
 
 function getBackgroundImageGitHub() {
+    pictureNum = (pictureNum < 10) ? `0${pictureNum}` : pictureNum;
     const img = new Image();
-    if (pictureNum < 10) {
-        pictureNum = `0${pictureNum}`;
-    }
-
     const souseLink = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${pictureNum}.jpg`;
 
     img.src = souseLink;
@@ -52,10 +49,9 @@ async function getBackgroundImageUnsplash() {
 
         if (response.status === 200) {
             const data = await response.json();
+
             img.src = data.urls.regular;
-            img.onload = () => {
-                document.body.style.backgroundImage = `url("${img.src}")`;
-            };
+            img.onload = () => document.body.style.backgroundImage = `url("${img.src}")`;
         } else if (response.status === 403) {
             const event = new Event("click");
             const message = (appLanguage === 'en') ? 'The image limit for Unsplash has been exceeded. Image source changed to GitHub' : `Превышен лимин изображений для Unsplash. Источник изображений изменен на GitHub`

@@ -74,6 +74,14 @@ const settingsData = {
     },
 }
 
+export default function configureApp() {
+    getElementsVisability();
+    setDefaultBackgroundSource();
+    setDefaultSettingsLanguage();
+    translateSettings();
+    setImagesSearchBarVisability();
+}
+
 function translateSettings() {
     // Language
     document.querySelector('.settings__header.language').textContent = settingsData[appLanguage].headers.language;
@@ -92,14 +100,6 @@ function translateSettings() {
     document.querySelector('.setting__notes').textContent = settingsData[appLanguage].options.background.note[currentImageSource];
     document.querySelector('.setting__header.images__search').textContent = settingsData[appLanguage].options.background.search.header;
     document.querySelector('.images__input').placeholder = settingsData[appLanguage].options.background.search.placeholder;
-}
-
-export default function configureApp() {
-    getElementsVisability();
-    setDefaultBackgroundSource();
-    setDefaultSettingsLanguage();
-    translateSettings();
-    setImagesSearchBarVisability();
 }
 
 export function showSettings(e) {

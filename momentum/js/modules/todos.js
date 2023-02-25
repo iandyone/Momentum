@@ -21,14 +21,13 @@ export function fetchTodos() {
 export function showTodos() {
     document.querySelector('.settings__button').classList.remove('active');
     document.querySelector('.settings__menu').classList.remove('active');
-
     document.querySelector('.todos__button').classList.toggle('active');
     document.querySelector('.todos__menu').classList.toggle('active');
 }
 
 export function hidePlaceholder() {
-    todosStartButton.classList.toggle('hidden');
     const todosInput = document.querySelector('.todos__input');
+    todosStartButton.classList.toggle('hidden');
     todosInput.classList.remove('hidden');
     todosInput.focus();
 }
@@ -50,18 +49,18 @@ export function addTodo(e) {
 
     todoState.push(todo);
     localStorage.setItem('todos', JSON.stringify(todoState));
-
     createTodo(todoID, todoText, todoStatus);
     e.target.value = '';
 }
 
 function createTodo(todoID, todoText, isDone) {
     const todoList = document.querySelector('.todos__list')
-    todoList.classList.remove('hidden');
-
     const todoItem = document.createElement('LI');
+
+    todoList.classList.remove('hidden');
     todoItem.classList.add('todo__item');
     todoItem.setAttribute('data-id', todoID);
+    
     if (isDone) {
         todoItem.classList.add('compleated');
     }
