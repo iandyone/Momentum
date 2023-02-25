@@ -30,7 +30,7 @@ export function getSlidePrev() {
     changeBackgroundImage();
 }
 
-function changeBackgroundImage() {
+export function changeBackgroundImage() {
     const imageSource = localStorage.getItem('backgroundSourse') || `github`;
 
     if (imageSource == `github`) {

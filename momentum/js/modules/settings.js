@@ -100,9 +100,6 @@ export default function configureApp() {
     setDefaultSettingsLanguage();
     translateSettings();
     setImagesSearchBarVisability();
-
-    // document.body.style.background = `url("./assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5)`
-    // document.body.style.transition = `background-image 1s ease-in-out`
 }
 
 export function showSettings(e) {
@@ -235,6 +232,6 @@ export function applySeatchChanges() {
         getSlideNext();
         setTimeout(() => {
             imagesSearchInput.classList.add('hidden');
-        }, 5000);
-    }, 1500);
+        }, 4000);
+    }, 700);
 }

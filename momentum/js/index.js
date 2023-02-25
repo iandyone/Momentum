@@ -1,12 +1,12 @@
-import { getSlideNext, getSlidePrev } from "./modules/slider.js";
+import { changeBackgroundImage, getSlideNext, getSlidePrev } from "./modules/slider.js";
 import { getUserName, setUserName } from "./modules/greeting.js";
 import { showWeather } from "./modules/weather.js";
 import { playMusic, playNextTrack, playPrevTrack, renderPlayList } from "./modules/audio.js";
+import { applySeatchChanges, chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
+import { addTodo, fetchTodos, hidePlaceholder, showTodos } from "./modules/todos.js";
 import getQuote from "./modules/quotes.js";
 import showTime from "./modules/time.js";
 import configureApp from "./modules/settings.js";
-import { applySeatchChanges, chooseImageTag, chooseOptions, setAppLanguage, setBackgroundImageSource, setElementVizability, setImagesSearchTag, showSettings } from "./modules/settings.js";
-import { addTodo, fetchTodos, hidePlaceholder, showTodos } from "./modules/todos.js";
 export const appLanguage = localStorage.getItem('appLanguage') || 'en';
 
 window.addEventListener('load', getUserName);
@@ -46,12 +46,13 @@ document.querySelectorAll('.images__tag').forEach(tag => {
 });
 
 
+changeBackgroundImage();
 configureApp();
-fetchTodos()
 showTime();
 showWeather('Minsk');
-getQuote();
 renderPlayList();
+getQuote();
+fetchTodos();
 
 
 export function getRandomValue(min, max) {
