@@ -1,7 +1,7 @@
 import { appLanguage, getRandomValue } from '../index.js';
 import { getTimeOfDay } from './greeting.js';
 
-const timeOfDay = getTimeOfDay(new Date().getHours());
+const timeOfDay = getTimeOfDay();
 let pictureNum = getRandomValue(1, 20);
 
 function getBackgroundImageGitHub() {
@@ -43,7 +43,7 @@ export function changeBackgroundImage() {
 async function getBackgroundImageUnsplash() {
     try {
         const img = new Image();
-        let searchTag = localStorage.getItem('imageTag') || `nature`;
+        let searchTag = localStorage.getItem('imageTag') || getTimeOfDay();
         let unsplashFetchLink = `https://api.unsplash.com/photos/random?orientation=landscape&query=${searchTag}&client_id=e2077ad31a806c894c460aec8f81bc2af4d09c4f8104ae3177bb809faf0eac17`;
         const response = await fetch(unsplashFetchLink);
 

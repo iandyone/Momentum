@@ -3,13 +3,14 @@ import { appLanguage } from "../index.js";
 export default function showGreeting() {
     const greeting = document.querySelector('.greeting');
     const hours = new Date().getHours();
-    const timeOfDay = getTimeOfDay(hours, appLanguage);
+    const timeOfDay = getTimeOfDay(appLanguage);
     const greetingMessage = getGreetingMessage(hours, timeOfDay, appLanguage);
 
     greeting.textContent = greetingMessage;
 }
 
-export function getTimeOfDay(hours, appLanguage = 'en') {
+export function getTimeOfDay(appLanguage = 'en') {
+    const hours = new Date().getHours();
     const timesOfDay = {
         ru: ['ночи', 'утро', 'день', 'вечер'],
         en: ['night', 'morning', 'afternoon', 'evening'],
