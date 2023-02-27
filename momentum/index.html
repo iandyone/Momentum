@@ -10,14 +10,32 @@
 </head>
 <body>
     <header class="header">
-        <div class="player" data-type='player'>
-            <div class="player-controls">
+        <div class="player" data-type="player">
+            <div class="controls-wrapper">
+              <div class="buttons-container">
                 <button class="play-prev player-icon"></button>
                 <button class="play player-icon"></button>
                 <button class="play-next player-icon"></button>
+              </div>
+              <div class="controls-container">
+                <div class="upper-cont">
+                  <div class="current-audio">Never Stop Snowing</div>
+                  <div class="duration-timer"><span class="current-time">00:00</span> / <span class="song-duration">00:00</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="duration">
+                    <input type="range" class="progress" id="progress-bar" min="0" max="100" step="0.25" value="0">
+                  </div>
+                  <div class="volume-control">
+                    <div class="mute-button"></div>
+                    <input type="range" class="sound-volume" id="soundVolume" min="0" max="100" step="1" value="80">
+                  </div>
+                </div>
+              </div>
             </div>
             <ul class="play-list"></ul>
-        </div>
+          </div>
         <div class="weather" data-type='weather'>
             <input type="text" class="city" />
             <i class="weather-icon owf"></i>
